@@ -1,11 +1,14 @@
 /.idea
+/auth.json
 /vendor
+/build
 /node_modules
 package-lock.json
 composer.phar
 composer.lock
 phpunit.xml
 .phpunit.result.cache
+.phpunit.cache
 .DS_Store
 /yarn.lock
 Thumbs.db
