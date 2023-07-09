@@ -46,7 +46,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NovaNavigaAdPreview\\ToolServiceProvider"
+                "NovaNavigaAdPreview\\ServiceProvider"
             ]
         }
     },

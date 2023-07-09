@@ -22,6 +22,32 @@ composer require think.studio/nova-naviga-ad-preview
 Package depends on [laravel-naviga-ad](https://packagist.org/packages/think.studio/laravel-naviga-ad). So please after install configure app
 according laravel-naviga-ad installation instructions.
 
+Add tool to nova servoce provider:
+
+```php
+namespace App\Providers;
+
+use NovaNavigaAdPreview\NovaNavigaAdPreview;
+
+class NovaServiceProvider extends NovaApplicationServiceProvider
+{
+    // ...
+    
+    public function tools()
+    {
+        return [
+            NovaNavigaAdPreview::make()
+                // optionally:
+                ->menuName('My custom name')
+                ->menuIcon('photograph')
+                ->canSee(fn ($request) => true /* add your check */),
+        ];
+    }
+    
+    // ...
+}
+```
+
 ![nova-naviga-ad-preview](./assets/images/nova-naviga-ad-preview.png)
 
 ![nova-naviga-ad-preview](./assets/images/nova-naviga-ad-preview-1.png)
