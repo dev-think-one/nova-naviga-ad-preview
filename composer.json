@@ -1,16 +1,17 @@
 {
-    "name": "yaroslawww/nova-naviga-ad-preview",
+    "name": "think.studio/nova-naviga-ad-preview",
     "description": "Laravel nova NavigaAd api requests preview.",
     "keywords": [
         "nova",
         "naviga-ad"
     ],
+    "homepage": "https://github.com/dev-think-one/nova-naviga-ad-preview",
     "license": "MIT",
     "authors": [
         {
             "name": "Yaroslav Georgitsa",
-            "email": "yg@thinkone.group",
-            "homepage": "https://think.studio/",
+            "email": "yg@think.studio",
+            "homepage": "https://github.com/yaroslawww",
             "role": "Developer"
         }
     ],
@@ -23,14 +24,14 @@
     "require": {
         "php": "^8.1",
         "laravel/nova": "^4.0",
-        "yaroslawww/laravel-naviga-ad": "^1.0|^2.0"
+        "think.studio/laravel-naviga-ad": "^2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.14",
-        "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^10.0",
+        "friendsofphp/php-cs-fixer": "^3.20",
+        "orchestra/testbench": "^8.5",
+        "phpunit/phpunit": "^10.2",
         "psalm/plugin-laravel": "^2.8",
-        "vimeo/psalm": "^5.7"
+        "vimeo/psalm": "^5.13"
     },
     "autoload": {
         "psr-4": {
@@ -51,8 +52,8 @@
     },
     "scripts": {
         "psalm": "vendor/bin/psalm",
-        "test": "vendor/bin/phpunit --colors=always",
-        "test-coverage": "vendor/bin/phpunit --colors=always --coverage-html coverage",
+        "test": "XDEBUG_MODE=coverage vendor/bin/phpunit --colors=always",
+        "test-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --colors=always --coverage-html coverage",
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
     "config": {
