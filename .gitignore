@@ -2,6 +2,7 @@
 /auth.json
 /vendor
 /build
+/coverage
 /node_modules
 package-lock.json
 composer.phar

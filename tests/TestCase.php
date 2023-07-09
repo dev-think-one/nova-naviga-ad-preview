@@ -3,7 +3,8 @@
 namespace NovaNavigaAdPreview\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Orchestra\Testbench\Database\MigrateProcessor;
+use Laravel\Nova\NovaCoreServiceProvider;
+use NovaNavigaAdPreview\Tests\Fixtures\NovaServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -12,6 +13,9 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
+            NovaCoreServiceProvider::class,
+            NovaServiceProvider::class,
+            \NavigaAdClient\ServiceProvider::class,
             \NovaNavigaAdPreview\ServiceProvider::class,
         ];
     }
@@ -33,6 +37,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
             'prefix'   => '',
         ]);
 
-        // $app['config']->set('nova-seo-entity.some_key', 'some_value');
+        $app['config']->set('naviga-ad.credentials', [
+            'username' => 'test_user',
+            'password' => 'test_secret',
+        ]);
+        $app['config']->set('naviga-ad.base_url', 'https://test.request');
     }
 }
